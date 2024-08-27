@@ -1,0 +1,10 @@
+*{
+    background-color:rgb(232, 94, 9);
+    color:beige;
+}
+th,td{
+    padding: 30px;
+}
+table{
+    margin-left: 30%;
+}

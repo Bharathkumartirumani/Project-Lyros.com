@@ -1,0 +1,8 @@
+.activeStatus{
+    background-color: aqua;
+    color:blue
+}
+.inActiveStatus{
+    background-color: rgb(255, 80, 80);
+    color:darkturquoise
+}
