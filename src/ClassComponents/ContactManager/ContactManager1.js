@@ -30,12 +30,13 @@ class ContactManager1 extends React.Component{
     handleSubmit=(e)=>{
         e.preventDefault()
         if(this.state.isUpdated){
-            axios.put(`http://localhost:3001/ContactsDetails${this.state.id}`,{
+            axios.put(`http://localhost:3001/ContactsDetails/${this.state.id}`,{
                 cname:this.state.ipName,
                 cno:this.state.ipNo,
                 cemail:this.state.ipEmail
             }).then((res)=>{
                 const temp=this.state.contacts
+                console.log(temp)
                 const index=temp.findIndex((item)=>item.id===res.data.id)
                  temp.splice(index,1,res.data)
                  console.log(temp)
