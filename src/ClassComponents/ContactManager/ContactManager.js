@@ -30,7 +30,7 @@ handleChange=(e,keyword)=>{
 handleSubmit=(e)=>{
     e.preventDefault()
     if(this.state.isUpdated){
-        axios.put(`http://localhost:3001/ContactsDetails${this.state.id}`,{
+        axios.put(`http://localhost:3001/ContactsDetails/${this.state.id}`,{
             cname:this.state.name,
             cno:this.state.no,
             cemail:this.state.email
