@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import data1 from "./data";
 import CompletedTask from "./CompletedTask";
 import PendingTask from "./PendingTask";
@@ -7,6 +7,7 @@ function TodoComponent(){
     const [data,setData]=useState([])
     const [des,setDes]=useState("")
     const [title,setTitle]=useState("")
+    let id=0;
     useEffect(()=>{
         setData(data1)
     },[])
@@ -20,7 +21,7 @@ const handleChange=(e,keyid)=>{
 }
 const handleTodo=()=>{
     const newTodo={
-        id:4,
+        id:id+4,
         title:title,
         desc:des,
         status:false,
@@ -30,18 +31,27 @@ const handleTodo=()=>{
     setData(temp)
     console.log(temp);
 }
-const getCompleted=()=>{
+const getCompleted=useCallback(()=>{
+    return ()=>{
     const temp=data.filter((item)=>item.status===true && item.active===true)
+    console.log("completed")
     return temp
-}
-const getPending=()=>{
+    }
+},[data])
+const getPending=useCallback(()=>{
+    return ()=>{
     const temp=data.filter((item)=>item.status===false)
+    console.log("pending")
     return temp
-}
-const getTrash=()=>{
+    }
+},[data])
+const getTrash=useCallback(()=>{
+    return ()=>{
     const temp=data.filter((item)=>item.active===false)
+    console.log("trash")
     return temp
-}
+    }
+})
 const changeStatus=(idd)=>{
     setData(data.map((item)=>{
         if(item.id===idd){

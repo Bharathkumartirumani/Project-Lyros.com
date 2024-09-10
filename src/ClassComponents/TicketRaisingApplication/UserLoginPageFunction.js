@@ -1,17 +1,17 @@
 
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import AdminLoginClass from "./AdminLoginClass";
+import UserLoginPageClass from "./UserLoginPageClass";
 import AuthContext from "./AuthContext";
 //import "./Styles/Adminlogin.css"; // Import CSS file (if any)
 
-function AdminLoginPageFunction() {
+function UserLoginPageFunction() {
     const navigate = useNavigate();
-    let context= useContext(AuthContext)
+    const {globalUsername,setUsername}=useContext(AuthContext)
 
     return (
-        <AdminLoginClass navigate={navigate} context={context}></AdminLoginClass>
+        <UserLoginPageClass navigate={navigate} />
     );
 }
 
-export default AdminLoginPageFunction;
+export default UserLoginPageFunction;

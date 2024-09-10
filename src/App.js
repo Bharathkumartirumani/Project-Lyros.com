@@ -31,7 +31,6 @@ import PlainComponent from "./ClassComponents/WHOCAPICalls/PlainComponent.js";
 // import ContactManager from "./ClassComponents/ContactManager/ContactManager.js";
 import ContactManager1 from "./ClassComponents/ContactManager/ContactManager1.js";
 import FormElements from "./ClassComponents/FormExamples/FormElements.js";
-import {BrowserRouter,Link,NavLink,Route,Routes} from 'react-router-dom'
 import LoginForm from "./ClassComponents/FormExamples/LoginForm.js";
 import LeaderBoard from "./ClassComponents/ScoreBoard/LeaderBoard.js";
 import Rank from "./ClassComponents/ScoreBoard/Rank.js";
@@ -42,21 +41,17 @@ import NavBarComponent from "./ClassComponents/ScoreBoard/NavBarComponent.js";
 import LoginPage from "./ClassComponents/NestedRoutes/LoginPage.js";
 import UserPage from "./ClassComponents/NestedRoutes/UserPage.js";
 import PageNotFound from "./ClassComponents/NestedRoutes/PageNotFound.js";
-import LoginPageFunction from "./ClassComponents/RouterHooks/LoginPage Function.js";
+//import LoginPageFunction from "./ClassComponents/RouterHooks/LoginPage Function.js";
 import DashBoardHooks from "./ClassComponents/RouterHooks/DashBoardHooks.js";
 import PageNotFound1 from "./ClassComponents/RouterHooks/PageNotFound1.js";
-import AdminLoginPageFunction from "./ClassComponents/TicketRaisingApplication/AdminLoginPageFunction.js";
 import AdminDashboard from "./ClassComponents/TicketRaisingApplication/AdminDashBoard.js";
-import { useState } from "react";
-import ParentComponent from "./FunctionComponents/ParentComponent.js";
+//import ParentComponent from "./FunctionComponents/ParentComponent.js";
 import ToggleComponent from "./FunctionComponents/ToggleComponent.js";
 import UseCaseOne from "./FunctionComponents/LCMWithHooks/UseCaseOne.js";
 import DiscriptionPage from "./ClassComponents/TicketRaisingApplication/TicketsPageClass.js";
 import TicketsPage from "./ClassComponents/TicketRaisingApplication/TicketsPageClass.js";
-import TicketsFunction from "./ClassComponents/TicketRaisingApplication/TicketsFunction.js";
 import UseCaseTwo from "./FunctionComponents/LCMWithHooks/UseCaseTwo.js";
 import SignInPage from "./ClassComponents/TicketRaisingApplication/SignInPage.js";
-import SignInPageFunction from "./ClassComponents/TicketRaisingApplication/SignInPageFunction.js";
 import AdminDashBoardInOrder from "./ClassComponents/TicketRaisingApplication/AdminDashBoardInOrder.js";
 import UseCaseThree from "./FunctionComponents/LCMWithHooks/UseCaseThree.js";
 import ContactManager from "./FunctionComponents/ContactManagerApplication/ContactManager.js";
@@ -64,6 +59,26 @@ import HookConsumer from "./FunctionComponents/ConsumerComponent.js/HookConsumer
 import PageRoot from "./FunctionComponents/PageRoot.js";
 import JsonComponent from "./FunctionComponents/ConsumerComponent.js/JsonComponent.js";
 import ArrayConsumer from "./FunctionComponents/ConsumerComponent.js/ArrayConsumer.js";
+import AlgoliaComponent from "./FunctionComponents/ConsumerComponent.js/AlgoliaComponent.js";
+import ParentComponent from "./FunctionComponents/Optimization-memo/ParentComponent.js";
+import CounterApp from "./FunctionComponents/CounterApp.js";
+import ContextProvider from "./FunctionComponents/SimpleContext/ContextProvider.js";
+import AuthProvider from "./FunctionComponents/AuthContext/AuthProvider.js";
+import ContactProvider from "./FunctionComponents/ContactContext/ContactProvider.js";
+import {BrowserRouter,Link,NavLink,Route,Routes} from 'react-router-dom';
+import AdminLoginPageFunction from "./ClassComponents/TicketRaisingApplication/AdminLoginPageFunction.js";
+import { useState } from "react";
+import TicketsFunction from "./ClassComponents/TicketRaisingApplication/TicketsFunction.js";
+import SignInPageFunction from "./ClassComponents/TicketRaisingApplication/SignInPageFunction.js";
+import LoginPageFunction from "./ClassComponents/TicketRaisingApplication/LoginPageFunction.js";
+import UserSignInPageFunction from "./ClassComponents/TicketRaisingApplication/UserSignInPageFunction.js";
+import UserLoginPageFunction from "./ClassComponents/TicketRaisingApplication/UserLoginPageFunction.js";
+import UserTicketFunction from "./ClassComponents/TicketRaisingApplication/UserTicketFunction.js";
+import ViewTickets from "./ClassComponents/TicketRaisingApplication/ViewTickets.js";
+import AuthContext from "./ClassComponents/TicketRaisingApplication/AuthContext.js";
+import AdminDashBoardFunction from "./ClassComponents/TicketRaisingApplication/AdminDashBoardFunction.js";
+import RiseTicket from "./ClassComponents/TicketRaisingApplication/RiseTicket.js";
+import AdminDashBoardInOrderFunction from "./ClassComponents/TicketRaisingApplication/AdminDashBoardInOrderFunction.js";
 // import clothing from "./ClassComponents/WOHOC/clothing";
 // const data=[
 //   {
@@ -92,6 +107,7 @@ import ArrayConsumer from "./FunctionComponents/ConsumerComponent.js/ArrayConsum
 //   }
 // ]
 function App(){
+  const [globalUsername,setUsername]=useState("")
   return(
     <>
     {/* <h1>Home Page</h1> */}
@@ -200,20 +216,33 @@ function App(){
       </Routes>
       </BrowserRouter>
        */}
-       {/* <BrowserRouter>
-       <Link to="/"></Link>
-       <Link to="/tickets"></Link>
-       <Link to="/signInPage"></Link>
+       <BrowserRouter>
+       <AuthContext.Provider value={{globalUsername:globalUsername,setUsername:setUsername}}>
+       {/* <Link to="/"></Link>
+       <Link to="/adminLogin"></Link>
+       <Link to="/adminSignInPage"></Link>
+       <Link to="/userLogin"></Link>
+       <Link to="/userSignIn"></Link>
        <Link to="/adminDashboard"></Link>
        <Link to="adminDashboardInOrder"></Link>
+       <Link to="/tickets"></Link>
+       <Link to="/userTicket"></Link>
+       <Link to="/viewTicket"></Link> */}
        <Routes>
-        <Route path="/" element={<AdminLoginPageFunction></AdminLoginPageFunction>}></Route>
+        <Route path="/" element={<LoginPageFunction></LoginPageFunction>}></Route>
+        <Route path="/adminLogin" element={<AdminLoginPageFunction></AdminLoginPageFunction>}></Route>
+        <Route path="/adminSignInPage" element={<SignInPageFunction></SignInPageFunction>}></Route>
+        <Route path="/userLogin" element={<UserLoginPageFunction></UserLoginPageFunction>}></Route>
+        <Route path="/userSignIn" element={<UserSignInPageFunction></UserSignInPageFunction>}></Route>
+        <Route path="/adminDashboard" element={<AdminDashBoardFunction></AdminDashBoardFunction>}></Route>
+        <Route path="/adminDashboardInOrder" element={<AdminDashBoardInOrderFunction></AdminDashBoardInOrderFunction>}></Route>
         <Route path="/tickets" element={<TicketsFunction></TicketsFunction>}></Route>
-        <Route path="signInPage" element={<SignInPageFunction></SignInPageFunction>}></Route>
-        <Route path="/adminDashboard" element={<AdminDashboard></AdminDashboard>}></Route>
-        <Route path="adminDashboardInOrder" element={<AdminDashBoardInOrder></AdminDashBoardInOrder>}></Route>
+        <Route path="/userTicket" element={<UserTicketFunction></UserTicketFunction>}></Route>
+        <Route path="/viewTicket" element={<ViewTickets></ViewTickets>}></Route>
+        <Route path="/riseTicket" element={<RiseTicket></RiseTicket>}></Route>
         </Routes>
-        </BrowserRouter> */}
+        </AuthContext.Provider>
+        </BrowserRouter>
       {/* <ParentComponent></ParentComponent> */}
       {/* <ToggleComponent></ToggleComponent> */}
       {/* <UseCaseOne></UseCaseOne> */}
@@ -222,9 +251,17 @@ function App(){
       {/* <ContactManager></ContactManager> */}
       {/* <HookConsumer></HookConsumer> */}
       {/* <PageRoot></PageRoot> */}
-      <TodoComponent></TodoComponent>
+      {/* <TodoComponent></TodoComponent> */}
       {/* <JsonComponent></JsonComponent> */}
       {/* <ArrayConsumer></ArrayConsumer> */}
+      {/* <AlgoliaComponent></AlgoliaComponent> */}
+      {/* <ParentComponent></ParentComponent> */}
+      {/* <TodoComponent></TodoComponent> */}
+      {/* <CounterApp></CounterApp> */}
+      {/* <ContextProvider></ContextProvider> */}
+      {/* <AuthProvider></AuthProvider> */}
+      {/* <ContextProvider></ContextProvider> */}
+      {/* <ContactProvider></ContactProvider> */}
 
     </>
   )

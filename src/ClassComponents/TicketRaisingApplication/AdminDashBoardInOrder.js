@@ -50,10 +50,13 @@ class AdminDashBoardInOrder extends React.Component {
         })
     }
     render() {
+        const context=this.props.context
+        const navigate=this.props.navigate
         return (
             <div className="admin-dashboard-in-order">
-                <OpenedTickets data={this.handleOpened()} prop1={this.closeTicket} prop2={this.state.data} />
+                <OpenedTickets data={this.handleOpened()} prop1={this.closeTicket} prop2={this.state.data} context={context}/>
                 <ClosedTickets data={this.handleClosed()} prop3={this.openTicket}/>
+                <button onClick={()=>navigate("/tickets")} className="button">DashBoard</button>
             </div>
         );
     }

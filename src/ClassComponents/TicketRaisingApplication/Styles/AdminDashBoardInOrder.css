@@ -5,3 +5,11 @@
     background-image: url(minimalist-gradient-background-design.avif);
     background-size: 100% 100%;
 }
+.button{
+    background-color: rgb(166, 255, 0);
+    padding:20px;
+    border-radius:10px;
+    margin-left: 1100px;
+    color:red;
+
+}

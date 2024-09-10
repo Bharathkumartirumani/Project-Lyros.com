@@ -1,7 +1,7 @@
 
 import React from "react";
 import axios from "axios";
-import "./Styles/ClosedTickets.css"; // Import CSS file
+import "./Styles/OpenTickets.css"; // Import CSS file
 
 class OpenedTickets extends React.Component {
     constructor(props) {
@@ -19,7 +19,9 @@ class OpenedTickets extends React.Component {
     }
 
     render() {
-        return (<><h1 className="openheading">OPENED TICKETS</h1>
+        {{console.log(this.props.context)}}
+        const {globalUsername,setUsername}=this.props.context
+        return (<><h1 className="openheading">{globalUsername}{" "}OPENED TICKETS</h1>
             <div className="opened-tickets">
                 {this.props.data.map((item) => (
                     <div key={item.id} className={`ticket priority-${item.priority}`}>

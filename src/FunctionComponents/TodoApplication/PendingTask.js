@@ -1,7 +1,10 @@
+import React from "react"
+import _isEqual from "lodash/isEqual"
 function PendingTask(props){
     return(
      <>
      <h1>Pending Tasks</h1>
+     {/* {console.log("pending")} */}
      {props.data.map((item)=>(
                 <>
                 <h1>{item.title}</h1>
@@ -14,4 +17,11 @@ function PendingTask(props){
      </>
     )
  }
- export default PendingTask
+ export default React.memo(PendingTask,(prevProps,newProps)=>{
+    if(_isEqual(prevProps.data,newProps.data)){
+       return true
+    }
+    else{
+       return false
+    }
+})

@@ -12,7 +12,6 @@ class AdminDashboard extends React.Component {
             data: []
         };
     }
-
     componentDidMount() {
         axios.get("http://localhost:3001/TicketDetails")
             .then((res) => this.setState({ data: res.data }))
@@ -47,14 +46,18 @@ class AdminDashboard extends React.Component {
             const index=temp.findIndex((item)=>item.id===idd)
             temp.splice(index,1,res.data)
             this.setState({data:temp})
+            // const {globalUsername}=this.props.context
         })
     }
-
     render() {
+        const context=this.props.context
+        const navigate=this.props.navigate
         return (
             <div className="admin-dashboard">
-                <OpenedTickets data={this.handleOpened()} prop1={this.closeTicket} prop2={this.state.data} />
+                <OpenedTickets data={this.handleOpened()} prop1={this.closeTicket} prop2={this.state.data} context={context}/>
+                {/* {console.log(this.props.context)} */}
                 <ClosedTickets data={this.handleClosed()} prop3={this.openTicket}/>
+                <button onClick={()=>navigate("/tickets")} className="button">DashBoard</button>
             </div>
         );
     }
