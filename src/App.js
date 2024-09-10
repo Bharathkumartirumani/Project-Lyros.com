@@ -7,7 +7,8 @@ import SimpleClass from "./ClassComponents/SimpleClass";
 import SimpleState from "./ClassComponents/SimpleState";
 import RootComponent from "./ClassComponents/RootComponent";
 import LifeCycleMethods from "./ClassComponents/LifeCycleMethods";
-import TodoComponent from "./ClassComponents/Todo/TodoComponent";
+// import TodoComponent from "./ClassComponents/Todo/TodoComponent";
+import TodoComponent from "./FunctionComponents/TodoApplication/TodoComponent.js";
 import RootComponent1 from "./ClassComponents/SignInPage/RootComponent/RootComponent1";
 import LifeCycleMethods1 from "./ClassComponents/LifeCycleMethods1";
 import ComponentA from "./ClassComponents/Timer/ComponentA";
@@ -27,7 +28,7 @@ import NormalComponent from "./ClassComponents/WHOCStyling/NormalComponent";
 import SimpleAPICall from "./ClassComponents/APICalls/SimpleAPICall";
 import LCMAPICall from "./ClassComponents/APICalls/LCMAPICalls";
 import PlainComponent from "./ClassComponents/WHOCAPICalls/PlainComponent.js";
-import ContactManager from "./ClassComponents/ContactManager/ContactManager.js";
+// import ContactManager from "./ClassComponents/ContactManager/ContactManager.js";
 import ContactManager1 from "./ClassComponents/ContactManager/ContactManager1.js";
 import FormElements from "./ClassComponents/FormExamples/FormElements.js";
 import {BrowserRouter,Link,NavLink,Route,Routes} from 'react-router-dom'
@@ -58,6 +59,11 @@ import SignInPage from "./ClassComponents/TicketRaisingApplication/SignInPage.js
 import SignInPageFunction from "./ClassComponents/TicketRaisingApplication/SignInPageFunction.js";
 import AdminDashBoardInOrder from "./ClassComponents/TicketRaisingApplication/AdminDashBoardInOrder.js";
 import UseCaseThree from "./FunctionComponents/LCMWithHooks/UseCaseThree.js";
+import ContactManager from "./FunctionComponents/ContactManagerApplication/ContactManager.js";
+import HookConsumer from "./FunctionComponents/ConsumerComponent.js/HookConsumer.js";
+import PageRoot from "./FunctionComponents/PageRoot.js";
+import JsonComponent from "./FunctionComponents/ConsumerComponent.js/JsonComponent.js";
+import ArrayConsumer from "./FunctionComponents/ConsumerComponent.js/ArrayConsumer.js";
 // import clothing from "./ClassComponents/WOHOC/clothing";
 // const data=[
 //   {
@@ -212,7 +218,13 @@ function App(){
       {/* <ToggleComponent></ToggleComponent> */}
       {/* <UseCaseOne></UseCaseOne> */}
       {/* <UseCaseTwo></UseCaseTwo> */}
-      <UseCaseThree></UseCaseThree>
+      {/* <UseCaseThree></UseCaseThree> */}
+      {/* <ContactManager></ContactManager> */}
+      {/* <HookConsumer></HookConsumer> */}
+      {/* <PageRoot></PageRoot> */}
+      <TodoComponent></TodoComponent>
+      {/* <JsonComponent></JsonComponent> */}
+      {/* <ArrayConsumer></ArrayConsumer> */}
 
     </>
   )
