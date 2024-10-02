@@ -2,9 +2,8 @@ import { useContext, useState } from "react"
 import CreateQuiz2 from "./CreateQuiz2"
 import { useNavigate } from "react-router-dom"
 import Context from "../Context/Context"
-
+import "./CreateQuiz.css"
 const CreateQuiz1= () => {
-
     const [dropDownValue, setDropDownValue] =useState(null)
     const [pages, setPages] = useState('')
     const [createQuiz,setCreateQuiz] = useState(false)
@@ -17,12 +16,8 @@ const CreateQuiz1= () => {
         setDropDownValue(e.target.value)
     }   
 
-    const handleHome = () => {
-        navigate('/')
-    }
-
     const handleBack = (e) => {
-        navigate('/admin')
+        navigate('/adminDashboard')
     }
 
     const handlePage = (e) => {
@@ -41,9 +36,6 @@ const CreateQuiz1= () => {
         }
     }
 
-    const handleUpdate = () => {
-        navigate('/update')
-    }
 
     const handleCreateQuiz = () => {
         setCreateQuiz(false)
@@ -55,22 +47,28 @@ const CreateQuiz1= () => {
     }
     return(
         <>
-            <div className="main-div">
+            <div className="con">
+                <div className="con1">
                 <div className="admin-details">
                         <p >Username : {globalUser.Username}</p>
                         <p>Email : {globalUser.Email}</p>
+                        <div>
+                    <button onClick={(e)=>handleBack(e)}>Dash-Board</button>
                 </div>
-                <div>
+                </div>
+                <div className="action">
                     <select onChange={(e) => handledropdown(e)} className="dropdown">
                         <option selected>select tech</option>
                         <option value="React">React</option>
                         <option value="HTML">HTML</option>
                         <option value='css'>CSS</option>
                         <option value='js'>Java Script</option>
-                    </select>
-                    How many Ques : <input type="text" onChange={(e) => handleques(e)} className="dropdown-text"></input>
+                    </select><br/><br/>
+                    Ques Count : <input type="text" onChange={(e) => handleques(e)} className="dropdown-text"></input><br/><br/>
                     <button type="submit" onClick={(e) => handlePage(e)} className="submit-button">Submit</button>
                     { createQuiz && <CreateQuiz2 totalPages = {array} perPage = {1} dropDownValue = {dropDownValue} createQuizValue ={handleCreateQuiz}></CreateQuiz2>} 
+                </div>
+               
                 </div>
             </div>
             {console.log(createQuiz)}

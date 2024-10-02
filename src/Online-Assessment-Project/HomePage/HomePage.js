@@ -25,7 +25,6 @@ const userLogin=(e)=>{
      <div className="mcqcontainer">
         <img className="mcqlogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJvHYkyEyufMquh98AqGr-4QsDXmkQkf589g&s"/>
         <div>
-            {/* <button className="mcqbutton">Login</button> */}
     <div className="popupflexing">
     <div>
         <Popup trigger={

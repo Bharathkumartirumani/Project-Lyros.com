@@ -1,0 +1,47 @@
+.background{
+    background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:500px ;
+    background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+    /* background-color: rgb(255, 0, 81); */
+    width:400px;
+    margin-left: 400px;
+    margin-top: 50px;
+    border:1px solid;
+    box-shadow: 0px 4px 16px 0px;
+    border-radius: 10px;
+}
+.heading{
+    font-size: 20px;
+}
+input{
+    border-radius: 5px;
+    padding: 10px;
+}
+.createbutton{
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 40px;
+    background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+}
+/* .signupheading{
+    margin-right: 200px;
+} */
+.signuppage{
+    /* background-color: rgb(255, 127, 127); */
+   background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+    background-size: cover;
+    width: 1300px;
+}
+ /* .container{
+    background-color: aqua;
+    height: 600px;
+ } */
+  .errormsg{
+    margin-left: 350px;
+    font-size: 50px;
+  }

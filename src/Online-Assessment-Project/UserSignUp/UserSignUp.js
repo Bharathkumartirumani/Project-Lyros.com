@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
+import './UserSignUp.css';
 function UserSignUp() {
   const [name, setName] = useState("")
   const [email, setemail] = useState("")
@@ -13,10 +13,8 @@ function UserSignUp() {
   const [number, setnumber] = useState()
   const [errorNumber, seterrorNumber] = useState()
   const [successfulmsg, setSuccessfulmsg] = useState("")
-  const [create, setCreate] = useState("please create an account!")
+  const [create, setCreate] = useState("Please Create An Account!")
   const [adminData, setadminData] = useState([])
-
-
   useEffect(() => {
     axios
       .get("http://localhost:3001/UserLoginDetails")
@@ -26,9 +24,6 @@ function UserSignUp() {
       })
       .catch((error) => console.log(error));
   }, []);
-
-
-
   const navigate = useNavigate()
   const handleChange = (e, keyword) => {
     e.preventDefault();
@@ -57,13 +52,10 @@ function UserSignUp() {
                 })
                 .then((res) => {
                   console.log(res.data);
-                  //   const temp = [...this.state.adminData, res.data];
-
-                  //   this.setState({ adminData: temp });
                 })
                 .catch((error) => console.log(error));
               setSuccessfulmsg("You've created your account successfully!");
-              navigate("/adminLogin")
+              navigate("/userLogin")
             } else {
               if (!(number.length === 10)) {
                 seterrorNumber(`the phone number must be 10 digits you enter ${number.length}`)
@@ -99,15 +91,14 @@ function UserSignUp() {
             }
           }
   }
-
-  return (
+return (
     <>
       <div className="signuppage">
         <h1 className="errormsg">
           {create}
         </h1>
         <div>
-          <div>
+          <div className="logcontainer">
             <form>
               <div className="container">
                 <div className="form">

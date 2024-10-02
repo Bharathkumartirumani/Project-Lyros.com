@@ -96,20 +96,17 @@ const CreateQuiz2 = (props) => {
 
     return(
         <>
-        currentPage : {currentPage}
-        totalPages : {totalPagesInNumber}            
         {
             paginatedData.map((item,index) => (
                 <form className="Ques-form">
                 <label>Question {currentPage}</label>
                 <input type="text" key={index} value={question} placeholder="Enter your question" onChange={(e) => handleTextValues(e,"question")} className="question"></input>
-                <label>Create Options</label>
-                <input type="text" className="Option" value={option1} placeholder="create options" onChange={(e) => handleTextValues(e,"option1")}></input>
-                <input type="text" className="Option" value={option2} placeholder="create options" onChange={(e) => handleTextValues(e,"option2")}></input>
-                <input type="text" className="Option" value={option3} placeholder="create options" onChange={(e) => handleTextValues(e,"option3")}></input>
-                <input type="text" className="Option" value={option4} placeholder="create options" onChange={(e) => handleTextValues(e,"option4")}></input>
-                <label>Answer</label>
-                <input type="text" className="Option" value={answer} placeholder="enter your answer" onChange={(e) => handleTextValues(e,"Answer")}></input>
+              <br/><br/>
+                <label>A</label><input type="text" className="Option" value={option1} placeholder="create options" onChange={(e) => handleTextValues(e,"option1")}></input><br/><br/>
+                <label>B</label><input type="text" className="Option" value={option2} placeholder="create options" onChange={(e) => handleTextValues(e,"option2")}></input><br/><br/>
+                <label>C</label><input type="text" className="Option" value={option3} placeholder="create options" onChange={(e) => handleTextValues(e,"option3")}></input><br/><br/>
+                <label>D</label><input type="text" className="Option" value={option4} placeholder="create options" onChange={(e) => handleTextValues(e,"option4")}></input><br/><br/>
+                <label>Answer</label><input type="text" className="Option" value={answer} placeholder="enter your answer" onChange={(e) => handleTextValues(e,"Answer")}></input>
                 </form>
             ))
         }

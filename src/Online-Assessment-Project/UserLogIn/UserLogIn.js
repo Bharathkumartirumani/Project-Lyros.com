@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import Context from "../Context/Context";
 import { useNavigate } from "react-router-dom";
-import AdminDashboardFunction from "../AdminDashboard/AdminDashboard";
+import "./UserLogIn.css"
 function UserLogIn() {
   const [userData, setuserData] = useState([])
   const [errorBox, seterrorBox] = useState()
@@ -15,11 +15,9 @@ function UserLogIn() {
   const [email,setemail]=useState("")
   const [errorEmail,seterrorEmail]=useState("")
   const [adminId,setAdminId]=useState()
-
   const [password, setPassword] = useState()
   const {_,setGlobalUser} = useContext(Context)
   const navigate=useNavigate()
-
   useEffect(() => {
     axios
       .get("http://localhost:3001/UserLoginDetails")
@@ -29,8 +27,6 @@ function UserLogIn() {
       })
       .catch((error) => console.log(error));
   }, []);
-
-
   const handleChange = (e, keyword) => {
     if (keyword === "name") {
       setName(e.target.value );
@@ -114,19 +110,20 @@ function UserLogIn() {
     setpasswordVisible(!passwordVisible);
   }
   return (
-    
-        <>
-      <h1>User/Login</h1>
-      <div>
-        <div>
+     <>
+     <div className="big-container">
+      <div className="adminlogin">
+      <h1 className="hea">User/Login</h1>
+        <div className="logincontainer">
           <form>
-            <div className="loginpage">
-              <div className="form-container">
+            <div className="login">
+              <div className="container1">
                 {/* <h1 className="main-heading">Admin/Login</h1> */}
                 <div>
                   <label className="heading" htmlFor="name">
                     Name :
                   </label>
+                  <br></br>
                   <input
                     type="text"
                     id="name"
@@ -200,18 +197,6 @@ function UserLogIn() {
                     {errorPassword}
                   </p>
                 </div>
-                <div>
-                  <div className="checkbox">
-                    <div>
-                      <input
-                        type="checkbox"
-                        onChange={(e) => handleChange(e, "checkbox")}
-                      />
-                      <p className="text"> Remember Me</p>
-                    </div>
-                  </div>
-                  <p style={{ color: "red" }}>{errorBox}</p>
-                </div>
                 <div className="button-container">
                   <button
                     className="button"
@@ -223,6 +208,7 @@ function UserLogIn() {
               </div>
             </div>
           </form>
+        </div>
         </div>
       </div>
     </>

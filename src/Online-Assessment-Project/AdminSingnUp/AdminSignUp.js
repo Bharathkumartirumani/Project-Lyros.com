@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import "./AdminSignUp.css"
 
 function AdminSignUp() {
   const [name, setName] = useState("")
@@ -13,7 +14,7 @@ function AdminSignUp() {
   const [number, setnumber] = useState()
   const [errorNumber, seterrorNumber] = useState()
   const [successfulmsg, setSuccessfulmsg] = useState("")
-  const [create, setCreate] = useState("please create an account!")
+  const [create, setCreate] = useState("Please Create An Account!")
   const [adminData, setadminData] = useState([])
   const [adminPhoto,setAdminPhoto]=useState()
 
@@ -71,9 +72,6 @@ function AdminSignUp() {
                 })
                 .then((res) => {
                   console.log(res.data);
-                  //   const temp = [...this.state.adminData, res.data];
-
-                  //   this.setState({ adminData: temp });
                 })
                 .catch((error) => console.log(error));
               setSuccessfulmsg("You've created your account successfully!");
@@ -132,6 +130,7 @@ function AdminSignUp() {
 
   return (
     <>
+    <div className="background">
       <div className="signuppage">
         <h1 className="errormsg">
           {create}
@@ -141,7 +140,6 @@ function AdminSignUp() {
             <form>
               <div className="container">
                 <div className="form">
-                  <h1 className="signupheading">SignUp</h1>
                   <div>
                     <label className="heading" htmlFor="name">Name :</label>
                     <br></br>
@@ -149,7 +147,7 @@ function AdminSignUp() {
                     <p style={{
                         color: "red",
                         fontWeight: "bolder",
-                        fontSize: "18px",
+                        fontSize: "10px",
                       }}
                     >
                       {errorName}
@@ -203,26 +201,6 @@ function AdminSignUp() {
                     </p>
                   </div>
 
-                  <div>
-                    <label className="heading" htmlFor="file">
-                      Choose Photo :
-                    </label>
-                    <br></br>
-                    <input
-                      type="file"
-                      id="file"
-                      onChange={(e) => handleChange(e, "photo")}
-                    />
-                    <p
-                      style={{
-                        color: "red",
-                        fontWeight: "bolder",
-                        fontSize: "18px",
-                      }}
-                    >
-                    </p>
-                  </div>
-
                   <div className="button-box">
                     <button
                       className="createbutton"
@@ -246,6 +224,7 @@ function AdminSignUp() {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </>
   )

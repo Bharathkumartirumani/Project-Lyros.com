@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import Context from "../Context/Context";
 import { useNavigate } from "react-router-dom";
-import AdminDashboardFunction from "../AdminDashboard/AdminDashboard";
+import "./AdminLogIn.css"
 function AdminLogIn() {
   const [adminData, setadminData] = useState([])
   const [errorBox, seterrorBox] = useState()
@@ -53,8 +53,6 @@ function AdminLogIn() {
     ) {
       const filteredResult = adminData.filter(
         (item) =>
-          // console.log(item.adminname)
-          // console.log(item.adminpassword)
           item.adminname ===name &&
           item.adminpassword ===password
       );
@@ -111,30 +109,26 @@ function AdminLogIn() {
 
       
     }
-
-
-
-  
-
-
-  }
+}
   const togglePasswordVisibility = () => {
     setpasswordVisible(!passwordVisible);
   }
   return (
     
         <>
-      <h1>Admin/Login</h1>
-      <div>
-        <div>
+      <div class="big-container">
+      <div className="adminlogin">
+      <h1 className="hea">Admin/Login</h1>
+        <div className="logincontainer">
           <form>
             <div className="loginpage">
-              <div className="form-container">
+              <div className="container1">
                 {/* <h1 className="main-heading">Admin/Login</h1> */}
                 <div>
                   <label className="heading" htmlFor="name">
                     Name :
                   </label>
+                  <br></br>
                   <input
                     type="text"
                     id="name"
@@ -185,7 +179,7 @@ function AdminLogIn() {
                       style={{ paddingRight: "40px" }}
                     />
                     <span
-                      onClick={togglePasswordVisibility} // Step 3: Add click handler
+                      onClick={togglePasswordVisibility}
                       style={{
                         position: "absolute",
                         right: "8px",
@@ -195,7 +189,6 @@ function AdminLogIn() {
                       }}
                     >
                       {passwordVisible ? "🙈" : "👁️"}
-                      {/* Eye icon */}
                     </span>
                   </div>
                   <p
@@ -207,18 +200,6 @@ function AdminLogIn() {
                   >
                     {errorPassword}
                   </p>
-                </div>
-                <div>
-                  <div className="checkbox">
-                    <div>
-                      <input
-                        type="checkbox"
-                        onChange={(e) => handleChange(e, "checkbox")}
-                      />
-                      <p className="text"> Remember Me</p>
-                    </div>
-                  </div>
-                  <p style={{ color: "red" }}>{errorBox}</p>
                 </div>
                 <div className="button-container">
                   <button
@@ -232,6 +213,7 @@ function AdminLogIn() {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </>
   )
