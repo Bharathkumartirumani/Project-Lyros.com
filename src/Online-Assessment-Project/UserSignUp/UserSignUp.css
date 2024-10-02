@@ -1,12 +1,12 @@
 .background{
-    background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+    background-image: url(image2.png);
 }
 .container{
     display:flex;
     justify-content: center;
     align-items: center;
     height:500px ;
-    background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+    background-image: url(image2.png);
     /* background-color: rgb(255, 0, 81); */
     width:400px;
     margin-left: 400px;
@@ -26,14 +26,14 @@ input{
     padding: 10px;
     border-radius: 10px;
     margin-left: 40px;
-    background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+    background-image: url(image2.png);
 }
 /* .signupheading{
     margin-right: 200px;
 } */
 .signuppage{
     /* background-color: rgb(255, 127, 127); */
-   background-image: url("https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg");
+   background-image: url(image2.png);
     background-size: cover;
     width: 1300px;
 }

@@ -1,16 +1,16 @@
 .innerdetails{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboPIl66et1zDxYPdHpSbqDZKnMb2QVTqB8Q&s");
+    background-image:url(image1.png);
     background-size: cover;
 }
 .green1{
     padding:5px;
     border-radius: 4px;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboPIl66et1zDxYPdHpSbqDZKnMb2QVTqB8Q&s");
+    background-image: url(image1.png);
 }
 .green2{
     padding:5px;
     border-radius: 4px;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboPIl66et1zDxYPdHpSbqDZKnMb2QVTqB8Q&s");
+    background-image: url(image1.png);
     margin-left: 10px;
 }
 .links1{
@@ -20,7 +20,7 @@
 }
 .dashcontainer{
     /* background-color: chocolate; */
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcqVZUjGu9C1XzzdODUYvwCXqQha6ANPhW5Q&s");
+    background-image: url(image4.png);
     height: 600px;
     background-size: cover;
 }

@@ -1,5 +1,5 @@
 .maindiv{
- background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNJMj-kfsAhNV0qxlKP4S4QNiMPbSkiKjIw&s");
+ background-image: url(image5.png);
  background-size: cover;
 }
 
@@ -17,12 +17,12 @@
   box-shadow: 6px 6px 6px 4px lightgrey;
 }
 .admindetails{
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbv_jQnuMpyTLd5XZtEHwOBrFAsPTDbjsHRQ&s");
+  background-image: url(image6.png);
   background-size: cover;
 }
 .boxx{
   padding: 6px;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNJMj-kfsAhNV0qxlKP4S4QNiMPbSkiKjIw&s");
+  background-image: url(image5.png);
   border-radius: 5px;
   background-size: cover;
 }
